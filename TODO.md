@@ -20,9 +20,5 @@ ask the user for permission before you automatically start working on any todos.
   - [x] add link to phd program https://ssc-physik.univie.ac.at/en/studying/doctorate/
   - [x] add link to my masters program https://studieren.univie.ac.at/en/find-you-degree-programme/masters-programmes/computational-science-masters-programme
 - [ ] The search bar surfaces matching page results rather than only menu headers in the navigation bar 
-- [ ] use this font: https://www.awwwards.com/sites/fontshare
-
-
-
-
-
+- [x] use Satoshi from Fontshare for headers
+- [ ] 
