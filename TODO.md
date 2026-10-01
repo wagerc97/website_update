@@ -14,12 +14,13 @@ ask the user for permission before you automatically start working on any todos.
   - [x] use the same font as editorial
   - [x] replace the circular hamburger with a left-aligned, three-stripe Editorial-style click trigger
 - [x] add my linkedin, orcid, github, kaggle (https://www.kaggle.com/wagerc97) page links with icons 
-- [ ] look at https://html5up.net/editorial again. The menu button is on the left and consists of only 3 stripes. 
-- [ ] hyperlnks in text 
-  - [ ] add link to uni wien https://www.univie.ac.at/en/
-  - [ ] add link to phd program https://ssc-physik.univie.ac.at/en/studying/doctorate/
-  - [ ] add link to my masters program https://studieren.univie.ac.at/en/find-you-degree-programme/masters-programmes/computational-science-masters-programme
-- [ ] The search bar does not surface any results from the pages. it only shows the menue headers in the navigation bar 
+- [x] look at https://html5up.net/editorial again. The menu button is on the left and consists of only 3 stripes. 
+- [x] hyperlnks in text 
+  - [x] add link to uni wien https://www.univie.ac.at/en/
+  - [x] add link to phd program https://ssc-physik.univie.ac.at/en/studying/doctorate/
+  - [x] add link to my masters program https://studieren.univie.ac.at/en/find-you-degree-programme/masters-programmes/computational-science-masters-programme
+- [ ] The search bar surfaces matching page results rather than only menu headers in the navigation bar 
+- [ ] use this font: https://www.awwwards.com/sites/fontshare
 
 
 

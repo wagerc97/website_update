@@ -35,14 +35,47 @@
   });
 
   const search = document.querySelector('#nav-search');
-  if (search) search.addEventListener('input', () => {
-    const query = search.value.trim().toLowerCase();
-    document.querySelectorAll('.site-nav > ul > li').forEach(item => {
-      const match = !query || item.textContent.toLowerCase().includes(query);
-      item.hidden = !match;
-      if (query && match && item.querySelector('.nav-group')) item.querySelector('.nav-group').open = true;
-    });
-  });
+  const searchResults = document.querySelector('.search-results');
+  if (search && searchResults) {
+    const isSubpage = document.querySelector('.brand')?.getAttribute('href')?.startsWith('../');
+    const path = name => isSubpage ? name : `sites/${name}`;
+    const pages = [
+      { title: 'Home', href: isSubpage ? '../index.html' : 'index.html', text: 'computational materials scientist permanent magnets University of Vienna Krems machine learning optimization uncertainty' },
+      { title: 'Research', href: path('research.html'), text: 'permanent magnet design uncertainty quantification surrogate models active learning optimization Nd Fe B materials' },
+      { title: 'Publications', href: path('publications.html'), text: 'papers presentations talks conferences JEMS REPM MMM Intermag neural networks uncertainty aware' },
+      { title: 'Profile', href: path('profile.html'), text: 'CV doctorate physics University of Vienna masters computational science education skills Python Bash Java' },
+      { title: 'Writing', href: path('writing.html'), text: 'blog notes scientific software modeling machine learning' },
+      { title: 'Selected Work', href: path('work.html'), text: 'GitHub projects software NOx sensor cloud backup locusts SIR classifier simulation' }
+    ];
+    const renderResults = query => {
+      const normalized = query.trim().toLowerCase();
+      if (!normalized) {
+        searchResults.hidden = true;
+        searchResults.replaceChildren();
+        return;
+      }
+      const matches = pages.filter(page => `${page.title} ${page.text}`.toLowerCase().includes(normalized));
+      searchResults.hidden = false;
+      searchResults.replaceChildren();
+      if (!matches.length) {
+        const empty = document.createElement('li');
+        empty.textContent = 'No matching pages';
+        searchResults.append(empty);
+        return;
+      }
+      matches.forEach(page => {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = page.href;
+        link.textContent = page.title;
+        link.addEventListener('click', closeSidebar);
+        item.append(link);
+        searchResults.append(item);
+      });
+    };
+    search.addEventListener('input', () => renderResults(search.value));
+  };
+
 
   const reveal = document.querySelector('[data-email-reveal]');
   if (reveal) reveal.addEventListener('click', () => {
