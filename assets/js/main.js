@@ -2,19 +2,24 @@
   const toggle = document.querySelector('.menu-toggle');
   const sidebar = document.querySelector('.site-sidebar');
   const groups = [...document.querySelectorAll('.nav-group')];
+
   const closeGroups = () => groups.forEach(group => { group.open = false; });
+  const openSidebar = () => {
+    if (!sidebar || !toggle) return;
+    sidebar.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+  };
   const closeSidebar = () => {
     if (!sidebar || !toggle) return;
     sidebar.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
   };
-
   if (toggle && sidebar) {
     toggle.addEventListener('click', () => {
-      const open = sidebar.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
+      sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
     });
   }
+
   groups.forEach(group => {
     group.addEventListener('toggle', () => {
       if (group.open) groups.forEach(other => { if (other !== group) other.open = false; });

@@ -4,3 +4,5 @@
 
 /* Match the Editorial template typography. */
 :root{--serif:'Roboto Slab',serif;--sans:'Open Sans',sans-serif}
+/* Compact Editorial-style navigation trigger for the collapsed sidebar. */
+@media(max-width:1000px){.menu-toggle{display:grid;place-items:center;width:2rem;height:2rem;padding:0;border:0;border-radius:0;background:transparent;color:transparent;font-size:0;cursor:pointer}.menu-toggle::before{content:"";display:block;width:1.3rem;height:2px;background:var(--teal);box-shadow:0 .38rem 0 var(--teal),0 -.38rem 0 var(--teal);transition:width .18s ease}.menu-toggle:hover::before{width:1.55rem}.menu-toggle:focus-visible{outline:3px solid #e7a84b;outline-offset:3px}.menu-toggle[aria-expanded="true"]::before{width:1.55rem}}
