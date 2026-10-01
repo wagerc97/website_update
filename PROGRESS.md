@@ -23,14 +23,11 @@ The new website is implemented directly from the repository root, taking over th
 | Personal apps | Not yet created | Hidden from navigation so no placeholder page is published. | Supply the curated public app names, descriptions, repository/demo links, and any images. |
 | Professional portrait | Not yet added | The homepage uses an abstract research graphic rather than a personal image. | Supply a professional photo and preferred alt text/crop. |
 
-## Legacy template URLs
+## Legacy template cleanup
 
-The original template is now taken over at the repository root. The two legacy routes no longer contain HTML5 UP demo content:
+The original HTML5 UP demo pages `generic.html` and `elements.html` have been removed. The active pages are the root homepage and the grouped subpages in `sites/`.
 
-- [`generic.html`](generic.html) redirects to [`profile.html`](sites/profile.html).
-- [`elements.html`](elements.html) redirects to [`writing.html`](sites/writing.html).
-
-The root `assets/` directory now contains the active site CSS and JavaScript. Unused legacy images and libraries may remain, but are not referenced by the adapted pages.
+The root `assets/` directory contains the active site CSS and JavaScript. Unused legacy images and libraries may remain, but are not referenced by the adapted pages.
 
 ## Supporting implementation files
 
