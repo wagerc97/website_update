@@ -2,6 +2,7 @@
   const toggle = document.querySelector('.menu-toggle');
   const sidebar = document.querySelector('.site-sidebar');
   const groups = [...document.querySelectorAll('.nav-group')];
+  const desktopSidebar = window.matchMedia('(min-width: 1001px)');
 
   const closeGroups = () =>
     groups.forEach((group) => {
@@ -17,10 +18,30 @@
     sidebar.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
   };
+  const syncSidebarMode = () => {
+    if (!sidebar || !toggle) return;
+    if (desktopSidebar.matches) {
+      sidebar.classList.remove('open');
+      toggle.setAttribute(
+        'aria-expanded',
+        String(!document.body.classList.contains('sidebar-collapsed')),
+      );
+    } else {
+      document.body.classList.remove('sidebar-collapsed');
+      toggle.setAttribute('aria-expanded', String(sidebar.classList.contains('open')));
+    }
+  };
   if (toggle && sidebar) {
     toggle.addEventListener('click', () => {
-      sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+      if (desktopSidebar.matches) {
+        const collapsed = document.body.classList.toggle('sidebar-collapsed');
+        toggle.setAttribute('aria-expanded', String(!collapsed));
+      } else {
+        sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+      }
     });
+    desktopSidebar.addEventListener('change', syncSidebarMode);
+    syncSidebarMode();
   }
 
   groups.forEach((group) => {

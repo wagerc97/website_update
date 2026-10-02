@@ -18,7 +18,11 @@ ask the user for permission before you automatically start working on any todos.
   - [x] add link to uni wien https://www.univie.ac.at/en/
   - [x] add link to phd program https://ssc-physik.univie.ac.at/en/studying/doctorate/
   - [x] add link to my masters program https://studieren.univie.ac.at/en/find-you-degree-programme/masters-programmes/computational-science-masters-programme
-- [ ] The search bar surfaces matching page results rather than only menu headers in the navigation bar
+- [x] The search bar surfaces matching page results rather than only menu headers in the navigation bar
 - [x] use Satoshi from Fontshare for headers
-- [ ]
 - [x] format HTML and add repeatable Prettier/HTML-Validate checks
+- [x] content overhaul: shift focus from pure materials design to me as a person with experience and skill in computational computing.
+- [x] make the section about my main topics more appealing: remove magnets (and leave uncertainty, machine learning, optimization and software development), present them with a big icon like in editorial. Chose a fitting icon for each.
+- [x] make the sidebar trigger always visible. Thus the user can trigger the sidebar anytime.
+- [x] the new icons are not visible
+- [x] remove the small meta info titles. keep text structure to have a header + text. e.g. "what i do" + "Four ways I approach computational problems." then there is the text body. Get rid of this initial small header like here "what i do". Check and copy this change for all sites.
