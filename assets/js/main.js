@@ -83,44 +83,68 @@
       {
         title: 'Home',
         href: isSubpage ? '../index.html' : 'index.html',
-        text: 'computational materials scientist permanent magnets University of Vienna Krems machine learning optimization uncertainty',
       },
       {
         title: 'Research',
         href: path('research.html'),
-        text: 'permanent magnet design uncertainty quantification surrogate models active learning optimization Nd Fe B materials',
       },
       {
         title: 'Publications',
         href: path('publications.html'),
-        text: 'papers presentations talks conferences JEMS REPM MMM Intermag neural networks uncertainty aware',
       },
       {
         title: 'Profile',
         href: path('profile.html'),
-        text: 'CV doctorate physics University of Vienna masters computational science education skills Python Bash Java',
       },
       {
         title: 'Writing',
         href: path('writing.html'),
-        text: 'blog notes scientific software modeling machine learning',
       },
       {
         title: 'Selected Work',
         href: path('work.html'),
-        text: 'GitHub projects software NOx sensor cloud backup locusts SIR classifier simulation',
       },
     ];
-    const renderResults = (query) => {
+    const normalize = (value) => value.replace(/\s+/g, ' ').trim();
+    const indexPage = async (page) => {
+      try {
+        const response = await fetch(page.href);
+        if (!response.ok) throw new Error(`Unable to load ${page.href}`);
+        const document = new DOMParser().parseFromString(await response.text(), 'text/html');
+        const sections = [...document.querySelectorAll('main > section')];
+        return sections.map((section) => {
+          const heading = normalize(section.querySelector('h1, h2')?.textContent || page.title);
+          return {
+            page: page.title,
+            section: heading,
+            href: `${page.href}${section.id ? `#${section.id}` : ''}`,
+            text: normalize(`${page.title} ${heading} ${section.textContent}`).toLowerCase(),
+          };
+        });
+      } catch {
+        return [];
+      }
+    };
+    const searchIndex = Promise.all(pages.map(indexPage)).then((results) => results.flat());
+    let searchRequest = 0;
+    const renderResults = async (query) => {
+      const request = ++searchRequest;
       const normalized = query.trim().toLowerCase();
       if (!normalized) {
         searchResults.hidden = true;
         searchResults.replaceChildren();
         return;
       }
-      const matches = pages.filter((page) =>
-        `${page.title} ${page.text}`.toLowerCase().includes(normalized),
+      const terms = normalized.split(/\s+/).filter(Boolean);
+      searchResults.hidden = false;
+      searchResults.replaceChildren();
+      const loading = document.createElement('li');
+      loading.textContent = 'Searching…';
+      searchResults.append(loading);
+      const matches = (await searchIndex).filter((entry) =>
+        terms.every((term) => entry.text.includes(term)),
       );
+      if (request !== searchRequest) return;
       searchResults.hidden = false;
       searchResults.replaceChildren();
       if (!matches.length) {
@@ -129,11 +153,11 @@
         searchResults.append(empty);
         return;
       }
-      matches.forEach((page) => {
+      matches.forEach((match) => {
         const item = document.createElement('li');
         const link = document.createElement('a');
-        link.href = page.href;
-        link.textContent = page.title;
+        link.href = match.href;
+        link.textContent = `${match.page} — ${match.section}`;
         link.addEventListener('click', closeSidebar);
         item.append(link);
         searchResults.append(item);
