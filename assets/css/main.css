@@ -363,6 +363,19 @@ section {
   grid-template-columns: 1.4fr 0.8fr;
   gap: 1.5rem;
 }
+.intro-statements {
+  display: grid;
+  max-width: 48rem;
+  gap: 2rem;
+}
+.intro-statements h3 {
+  margin: 0 0 0.75rem;
+  font: 500 1.65rem/1.25 var(--serif);
+}
+.intro-statements p {
+  margin: 0;
+  color: var(--muted);
+}
 .card {
   background: var(--surface);
   border: 1px solid var(--line);
