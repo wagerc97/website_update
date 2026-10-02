@@ -3,6 +3,11 @@
   const sidebar = document.querySelector('.site-sidebar');
   const groups = [...document.querySelectorAll('.nav-group')];
   const desktopSidebar = window.matchMedia('(min-width: 1001px)');
+  const isSubpage = document.querySelector('.brand')?.getAttribute('href')?.startsWith('../');
+  const navGroupPages = {
+    Publications: isSubpage ? 'publications.html' : 'sites/publications.html',
+    Profile: isSubpage ? 'profile.html' : 'sites/profile.html',
+  };
 
   const closeGroups = () =>
     groups.forEach((group) => {
@@ -45,6 +50,14 @@
   }
 
   groups.forEach((group) => {
+    const summary = group.querySelector('summary');
+    summary?.addEventListener('click', (event) => {
+      if (!group.open) return;
+      const href = navGroupPages[summary.textContent.trim()];
+      if (!href) return;
+      event.preventDefault();
+      window.location.assign(href);
+    });
     group.addEventListener('toggle', () => {
       if (group.open)
         groups.forEach((other) => {
@@ -77,7 +90,6 @@
   const search = document.querySelector('#nav-search');
   const searchResults = document.querySelector('.search-results');
   if (search && searchResults) {
-    const isSubpage = document.querySelector('.brand')?.getAttribute('href')?.startsWith('../');
     const path = (name) => (isSubpage ? name : `sites/${name}`);
     const pages = [
       {

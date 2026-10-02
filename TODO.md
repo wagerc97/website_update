@@ -33,3 +33,4 @@ ask the user for permission before you automatically start working on any todos.
 - [x] add my stay at nims to the timeline: NIMS: Tsukuba, Ibaraki, JP, 2026-09 to 2026-10 | Intern (Green Magnetic Materials Group) URL: https://www.nims.go.jp/group/gmmg/
 - [x] Technical strengths section: add icons and remove the boxes. Arrange it better.
 - [x] make the "Research themes" look nicer! more exciting sparking curiousity
+- [x] position left bound following sections: Research direction, How I approach the problem, Research direction, About,
