@@ -26,3 +26,7 @@ ask the user for permission before you automatically start working on any todos.
 - [x] make the sidebar trigger always visible. Thus the user can trigger the sidebar anytime.
 - [x] the new icons are not visible
 - [x] remove the small meta info titles. keep text structure to have a header + text. e.g. "what i do" + "Four ways I approach computational problems." then there is the text body. Get rid of this initial small header like here "what i do". Check and copy this change for all sites.
+- [x] add links in the profile.html for
+  - [x] Center for Modelling and Simulation: https://www.donau-uni.ac.at/en/university/faculties/education-arts-architecture/departments/integrated-sensor-systems/centers/modelling-and-simulation.html
+  - [x] University for Continuing Education Krems: https://www.donau-uni.ac.at/en.html
+  - [x] Christian Doppler Laboratory: https://www.cdg.ac.at/en/research-units/labor/magnet-design-through-physics-informed-machine-learning

@@ -305,30 +305,22 @@ section {
   margin: 0;
 }
 .topic-list-icons {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 3.5rem;
   border: 0;
   background: transparent;
 }
 .topic-list-icons article {
   position: relative;
-  min-height: 15rem;
-  padding: 1.8rem 1.45rem 1.55rem 5.25rem;
-  border: 1px solid var(--line);
-  background: var(--surface);
+  min-height: 8.5rem;
+  padding: 0.45rem 0 0.45rem 5.5rem;
 }
 .topic-list-icons .icon {
   position: absolute;
-  left: 1.35rem;
-  top: 1.65rem;
-  display: grid;
-  place-items: center;
-  width: 2.85rem;
-  height: 2.85rem;
-  border-radius: 50%;
-  background: var(--soft);
+  left: 0;
+  top: 0.45rem;
   color: var(--teal);
-  font-size: 1.25rem;
+  font-size: 3.5rem;
 }
 .topic-list-icons h3 {
   margin: 0 0 0.65rem;
