@@ -30,4 +30,5 @@ ask the user for permission before you automatically start working on any todos.
   - [x] Center for Modelling and Simulation: https://www.donau-uni.ac.at/en/university/faculties/education-arts-architecture/departments/integrated-sensor-systems/centers/modelling-and-simulation.html
   - [x] University for Continuing Education Krems: https://www.donau-uni.ac.at/en.html
   - [x] Christian Doppler Laboratory: https://www.cdg.ac.at/en/research-units/labor/magnet-design-through-physics-informed-machine-learning
-- [ ] add my stay at nims to the timeline: NIMS: Tsukuba, Ibaraki, JP, 2026-09 to 2026-10 | Intern (Green Magnetic Materials Group) URL: https://www.nims.go.jp/group/gmmg/
+- [x] add my stay at nims to the timeline: NIMS: Tsukuba, Ibaraki, JP, 2026-09 to 2026-10 | Intern (Green Magnetic Materials Group) URL: https://www.nims.go.jp/group/gmmg/
+- [x] Technical strengths section: add icons and remove the boxes. Arrange it better.
