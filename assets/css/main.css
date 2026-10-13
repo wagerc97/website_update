@@ -510,6 +510,12 @@ section {
   color: var(--muted);
   margin: 0 0 1rem;
 }
+.work-grid .project-date {
+  margin-top: -0.35rem;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
 .work-grid a:last-child {
   margin-top: auto;
   font-weight: 750;
