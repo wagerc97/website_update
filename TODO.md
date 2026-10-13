@@ -39,7 +39,7 @@ ask the user for permission before you automatically start working on any todos.
 - [x] add links to the respective conferences i presented on in publications.html
 - [x] note that i had a poster at the HMM conference
 - [x] in the section "four ways I ..." order the 4 blocks: machine learning, optimization, uncertainty, software dev
-
+- [ ] add tools icon to profile.html tools sections
 
 # For human 
 - [ ] fine tune research.html wording
