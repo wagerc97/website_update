@@ -34,3 +34,8 @@ ask the user for permission before you automatically start working on any todos.
 - [x] Technical strengths section: add icons and remove the boxes. Arrange it better.
 - [x] make the "Research themes" look nicer! more exciting sparking curiousity
 - [x] position left bound following sections: Research direction, How I approach the problem, Research direction, About,
+- [x] Add a button called "Apps" in a hidden location. Pressing it will lead to page called Apps that has more projects cards in the same design as work.html. These careds link to the following github repo: https://github.com/wagerc97/wiener_wohnen_ticket_punkte. Add the button to my github repo again.
+- [x] remove unused assets
+- [x] add links to the respective conferences i presented on in publications.html
+- [x] note that i had a poster at the HMM conference
+- [x] in the section "four ways I ..." order the 4 blocks: machine learning, optimization, uncertainty, software dev
