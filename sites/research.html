@@ -124,7 +124,7 @@
             <p>
               At the Christian Doppler Laboratory for magnet design through physics-informed machine
               learning, I work on data-mining routines, predictive models, and their validation in
-              collaboration with project partners.
+              collaboration with project partners at CNRS and Toyota.
             </p>
           </div>
         </div>
@@ -134,38 +134,20 @@
           <div class="prose">
             <h2>How I approach the problem</h2>
             <p>
-              Scientific design often involves competing objectives, limited data, and expensive
-              evaluations. I use computational models to explore these trade-offs and surrogate
-              models when direct simulations or experiments are impractical.
+              Design tasks often involves competing objectives, limited data, and expensive
+              evaluations such as real world experiments or high-fidelity simulations. 
+              I analyse, augment and curate datasets, develop machine learning models to find patterns and to explore 
+              design trade-offs with optimization algorithms.  
+              ML models are also useful to replace experiments when direct evalution is impractical due to resource constraints.
+              We need reliable models to support decision-making.
             </p>
             <p>
-              A central question is whether a model can be trusted where it is used. My work
-              therefore evaluates uncertainty alongside prediction error and incorporates
-              uncertainty-aware models into optimization workflows. This helps distinguish promising
-              designs from predictions that require more information.
+              A central question is whether a model can be trusted where it is used. 
+              My work therefore evaluates uncertainty alongside prediction error. 
+              Incorporating uncertainty-aware models into optimization workflows offers a key advantage:
+              We can set a lower bound on the confidence of predicted designs. 
+              This helps distinguish bad candidate designs from promising solutions. 
             </p>
-          </div>
-        </div>
-      </section>
-      <section class="page-section" id="methods">
-        <div class="container">
-          <div class="highlight-grid">
-            <article class="card">
-              <h3>Uncertainty quantification</h3>
-              <p>
-                Predictive accuracy alone is not enough for scientific decision-making. I compare
-                and develop diagnostics for model calibration, sharpness, and confidence so
-                uncertainty can inform modeling and optimization choices.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Optimization &amp; active learning</h3>
-              <p>
-                I investigate multi-objective optimization and active learning strategies for
-                expensive objective functions, building modular and reproducible Python workflows
-                for systematic comparison.
-              </p>
-            </article>
           </div>
         </div>
       </section>
