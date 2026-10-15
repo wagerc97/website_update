@@ -758,6 +758,28 @@ section {
 .sidebar-inner {
   padding: 1.35rem;
 }
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.6rem;
+  margin: 0 0 1.1rem;
+  padding: 0.65rem 0;
+  border: 0;
+  border-bottom: 1px solid #ffffff2e;
+  background: transparent;
+  color: white;
+  font: 600 0.84rem var(--sans);
+  text-align: left;
+  cursor: pointer;
+}
+.theme-toggle:hover {
+  color: #b4dadd;
+}
+.theme-toggle .fas {
+  width: 1rem;
+  text-align: center;
+}
 .site-sidebar .site-nav {
   display: block;
   position: static;
@@ -874,6 +896,51 @@ body {
 :root {
   --serif: 'Satoshi', sans-serif;
   --sans: 'Open Sans', sans-serif;
+}
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #edf5f7;
+  --muted: #b7c6ce;
+  --paper: #132027;
+  --line: #30444e;
+  --surface: #1b2a32;
+  --blue: #70cce5;
+  --blue-dark: #0b2029;
+  --teal: #6cdbca;
+  --soft: #1c3c42;
+}
+html[data-theme='dark'] .topbar {
+  background: rgba(19, 32, 39, 0.94);
+}
+html[data-theme='dark'] .hero,
+html[data-theme='dark'] .page-hero,
+html[data-theme='dark'] .work-grid article,
+html[data-theme='dark'] .empty {
+  background: var(--surface);
+}
+html[data-theme='dark'] .hero p {
+  color: var(--muted);
+}
+html[data-theme='dark'] .hero-art {
+  border-color: #47727a;
+  background: linear-gradient(145deg, #1c3c42, #1b2a32);
+}
+html[data-theme='dark'] .hero-art:before,
+html[data-theme='dark'] .hero-art:after {
+  border-color: #5b9895;
+}
+html[data-theme='dark'] .hero-art span {
+  background: #132027d9;
+}
+html[data-theme='dark'] .hero-avatar {
+  border-color: #47727a;
+  background: var(--soft);
+}
+html[data-theme='dark'] .timeline {
+  border-color: var(--line);
+}
+html[data-theme='dark'] .site-footer {
+  background: #0f1a20;
 }
 .menu-toggle:focus-visible {
   outline: 3px solid #e7a84b;
