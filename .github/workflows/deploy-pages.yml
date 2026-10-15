@@ -23,10 +23,12 @@ jobs:
         run: |
           mkdir _site
           rsync -a --delete \
+            --exclude '.zed' \
             --exclude '.git' \
             --exclude '.github' \
             --exclude '_site' \
             --exclude 'my_content' \
+            --exclude 'TODO.md' \
             --exclude 'PROGRESS.md' \
             ./ _site/
       - uses: actions/upload-pages-artifact@v3
