@@ -174,8 +174,8 @@ button:focus-visible {
   padding: 0 1.5rem;
 }
 .hero {
-  padding: 7.5rem 0 5.5rem;
-  background: linear-gradient(120deg, #fff 0%, #f6fbfb 58%, #e6f2f2 100%);
+  padding: 5.5rem 0 4.5rem;
+  background: #fff;
   border-bottom: 1px solid var(--line);
 }
 .hero-grid {
@@ -190,6 +190,10 @@ button:focus-visible {
   letter-spacing: -0.04em;
   margin: 0 0 1.5rem;
   max-width: 14ch;
+}
+.hero h1 {
+  font-size: clamp(2.7rem, 4.5vw, 4.25rem);
+  max-width: none;
 }
 .hero p {
   font-size: 1.18rem;
