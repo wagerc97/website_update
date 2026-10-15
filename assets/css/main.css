@@ -761,20 +761,23 @@ section {
 .theme-toggle {
   display: flex;
   align-items: center;
-  width: 100%;
   gap: 0.6rem;
-  margin: 0 0 1.1rem;
-  padding: 0.65rem 0;
+  margin: 0 0 1.25rem;
+  padding: 0.42rem 0.6rem;
   border: 0;
-  border-bottom: 1px solid #ffffff2e;
-  background: transparent;
-  color: white;
+  border-radius: 0.3rem;
+  background: #071c25;
+  color: #e8f5f6;
   font: 600 0.84rem var(--sans);
   text-align: left;
   cursor: pointer;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
 }
 .theme-toggle:hover {
-  color: #b4dadd;
+  background: #123946;
+  color: white;
 }
 .theme-toggle .fas {
   width: 1rem;
@@ -911,6 +914,13 @@ html[data-theme='dark'] {
 }
 html[data-theme='dark'] .topbar {
   background: rgba(19, 32, 39, 0.94);
+}
+html[data-theme='dark'] .theme-toggle {
+  background: #dcebed;
+  color: #0b2029;
+}
+html[data-theme='dark'] .theme-toggle:hover {
+  background: white;
 }
 html[data-theme='dark'] .hero,
 html[data-theme='dark'] .page-hero,

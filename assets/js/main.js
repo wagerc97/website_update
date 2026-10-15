@@ -1,4 +1,40 @@
 (() => {
+  const root = document.documentElement;
+  const themeToggle = document.querySelector('.theme-toggle');
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const savedTheme = (() => {
+    try {
+      return window.localStorage.getItem('theme');
+    } catch {
+      return null;
+    }
+  })();
+  const applyTheme = (theme, save = false) => {
+    const dark = theme === 'dark';
+    root.dataset.theme = theme;
+    themeColor?.setAttribute('content', dark ? '#132027' : '#155e75');
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-pressed', String(dark));
+      themeToggle.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} mode`);
+      themeToggle.querySelector('.theme-toggle-label').textContent = dark
+        ? 'Light mode'
+        : 'Dark mode';
+      themeToggle.querySelector('.fas').className = dark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+    if (save)
+      try {
+        window.localStorage.setItem('theme', theme);
+      } catch {
+        // Continue without persistence when browser storage is unavailable.
+      }
+  };
+  applyTheme(
+    savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
+  );
+  themeToggle?.addEventListener('click', () => {
+    applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true);
+  });
+
   const toggle = document.querySelector('.menu-toggle');
   const sidebar = document.querySelector('.site-sidebar');
   const groups = [...document.querySelectorAll('.nav-group')];
