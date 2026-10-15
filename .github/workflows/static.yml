@@ -37,19 +37,20 @@ jobs:
         run: |
           mkdir _site
           rsync -a --delete \
+            --exclude '.lavish' \
             --exclude '.zed' \
             --exclude '.git' \
             --exclude '.github' \
             --exclude '_site' \
-            --exclude 'my_content' \
             --exclude 'TODO.md' \
             --exclude 'PROGRESS.md' \
+            --ignore-missing-args \
             ./ _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './_site'
+          path: './_site/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
