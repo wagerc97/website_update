@@ -34,6 +34,11 @@ a {
 a:hover {
   color: var(--teal);
 }
+#about .prose a,
+#timeline a,
+#presentations a {
+  text-decoration: none;
+}
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid #e7a84b;
