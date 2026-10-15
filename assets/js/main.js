@@ -1,4 +1,24 @@
 (() => {
+  const anchorOffset = 80;
+  const scrollToAnchor = (hash, behavior = 'auto') => {
+    const id = decodeURIComponent(hash.replace(/^#/, ''));
+    const target = id && document.getElementById(id);
+    if (!target) return;
+    window.scrollTo({
+      top: Math.max(0, target.getBoundingClientRect().top + window.scrollY - anchorOffset),
+      behavior,
+    });
+  };
+  const restoreAnchorPosition = () => {
+    if (window.location.hash) scrollToAnchor(window.location.hash);
+  };
+  window.addEventListener('load', () => requestAnimationFrame(restoreAnchorPosition), {
+    once: true,
+  });
+  window.addEventListener('hashchange', () =>
+    requestAnimationFrame(() => scrollToAnchor(window.location.hash, 'smooth')),
+  );
+
   const root = document.documentElement;
   const themeToggle = document.querySelector('.theme-toggle');
   const themeColor = document.querySelector('meta[name="theme-color"]');
