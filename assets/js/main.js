@@ -22,13 +22,13 @@
   const root = document.documentElement;
   const themeToggle = document.querySelector('.theme-toggle');
   const themeColor = document.querySelector('meta[name="theme-color"]');
-  const savedTheme = (() => {
+  const getSavedTheme = () => {
     try {
       return window.localStorage.getItem('theme');
     } catch {
       return null;
     }
-  })();
+  };
   const applyTheme = (theme, save = false) => {
     const dark = theme === 'dark';
     root.dataset.theme = theme;
@@ -48,11 +48,17 @@
         // Continue without persistence when browser storage is unavailable.
       }
   };
-  applyTheme(
-    savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'),
-  );
+  const getPreferredTheme = () =>
+    getSavedTheme() ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  applyTheme(getPreferredTheme());
   themeToggle?.addEventListener('click', () => {
     applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true);
+  });
+  // History restores retain a page's DOM, so re-read the shared preference on return.
+  window.addEventListener('pageshow', () => applyTheme(getPreferredTheme()));
+  window.addEventListener('storage', (event) => {
+    if (event.key === 'theme') applyTheme(getPreferredTheme());
   });
 
   const toggle = document.querySelector('.menu-toggle');
